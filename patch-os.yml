@@ -2,4 +2,5 @@
   hosts: all
   tasks:
     - name: Patching Red Hat Enterprise Linux
-      command: yum update -y
+      - command: yum update -y
+        yum: list 

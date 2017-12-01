@@ -4,8 +4,13 @@
 #    - name: Check environment
 #      command:  hostname|cut -d- -f2
 #      register: environment_name
-    - name: Patching Red Hat Enterprise Linux
+    - name: Run yum list
       yum:
         list: ansible
+      register: result  
       when:
         - environment_name == "infp"
+       
+    - name: Print result
+      debug:
+        msg: "Result is {{ result }}"

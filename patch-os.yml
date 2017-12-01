@@ -10,6 +10,7 @@
       register: result  
       when:
         - environment_name == "infp"
+        - ansible_distribution == "OracleLinux"
        
     - name: Print result
       debug:

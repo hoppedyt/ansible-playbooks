@@ -3,4 +3,3 @@
   tasks:
     - name: Patching Red Hat Enterprise Linux
       command: yum update -y
-        msg: "Patched Red Hat Enterprise Linux {{ rhel_version }}"

@@ -11,6 +11,6 @@
       when:
         (environment_name == "infp" and ansible_distribution == "OracleLinux")
        
-    - name: Print result
+    - name: Print dev result
       debug:
         msg: "Result is {{ result }}"

@@ -4,15 +4,17 @@
 #    - name: Check environment
 #      command:  hostname|cut -d- -f2
 #      register: environment_name
-    - name: Run yum list
-      yum:
-        list: ansible
-      register: result  
-      when:
-        (environment_name == "infp" and ansible_distribution == "OracleLinux")
+    - command: "ls /etc/ansible/"
+      register: dir_out
+#    - name: Run yum list
+#      yum:
+#        list: ansible
+#      register: result  
+#      when:
+#        (environment_name == "infp" and ansible_distribution == "OracleLinux")
     - name: Print result to file
-      local_action: copy content={{ result }} dest=/tmp/ansible_file.txt
+      local_action: copy content={{dir_out}} dest=/tmp/ansible_file.txt
     
-    - name: Print result
-      debug:
-        msg: "Result is {{ result }}"
+#    - name: Print result
+#      debug:
+#        msg: "Result is {{ result }}"

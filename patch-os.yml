@@ -11,7 +11,7 @@
       when:
         (environment_name == "infp" and ansible_distribution == "OracleLinux")
     - name: take out of load balancer pool
-      local_action: copy content={{ result }} dest=/tmp/ansoible_file.txt
+      local_action: copy content={{ result }} dest=/tmp/ansible_file.txt
     
     - name: Print result
       debug:

@@ -10,7 +10,7 @@
       register: result  
       when:
         (environment_name == "infp" and ansible_distribution == "OracleLinux")
-    - name: take out of load balancer pool
+    - name: Print result to file
       local_action: copy content={{ result }} dest=/tmp/ansible_file.txt
     
     - name: Print result
